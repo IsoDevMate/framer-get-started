@@ -1,0 +1,100 @@
+/* General container for the landing screen */
+.landing-screen {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000000;
+}
+
+/* Container for stars */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Style for each individual star */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+}
+
+/* Style for the small moon image */
+.small-moon {
+    position: absolute;
+    top: .5px;
+    left: .5px;
+    width: 100px;
+    height: auto;
+}
+
+/* Style for the logo image */
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: auto;
+}
+
+/* Style for the large moon image */
+.large-moon {
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    transform: translateX(-50%);
+    height: auto;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .small-moon {
+        width: 70px;
+    }
+    .logo {
+        width: 150px;
+    }
+    .large-moon {
+        width: 120%;
+    }
+}
+
+@media (max-width: 480px) {
+    .small-moon {
+        width: 50px;
+    }
+    .logo {
+        width: 100px;
+    }
+    .large-moon {
+        width: 150%;
+    }
+}
+
+.landing-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 
+        calc(10vw + 10px) calc(10vh + 10px),
+        calc(15vw + 15px) calc(15vh + 15px);
+    background-position: 0 0, 10px 10px;
+    animation: twinkle 10s infinite;
+    opacity: 0.5;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}

@@ -1,0 +1,67 @@
+
+.splash-screen {
+    width: 100%;
+    overflow: hidden;
+    background: black;
+    
+  
+  }
+  
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 2s infinite;
+  }
+  
+  @keyframes twinkle {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .earth {
+    position: absolute;
+    bottom: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    animation: rotateEarth 20s linear infinite;
+  }
+  
+  @keyframes rotateEarth {
+    from {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    .earth {
+      width: 150%;
+      bottom: -35%;
+    }
+  }
+  
+  
